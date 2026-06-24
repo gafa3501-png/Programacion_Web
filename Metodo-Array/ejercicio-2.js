@@ -9,8 +9,11 @@ const productos = [
   { id: 8, nombre: "Webcam HD",              categoria: "Electrónica", precio: 18000, stock: 5,  activo: true  },
 ];
 
-const nombres = productos.map(function(producto) {
-  return producto.nombre;
+const preciosConIVA = productos.map(producto => {
+  return {
+    nombre: producto.nombre,
+    precioFinal: Math.round(producto.precio * 1.21)
+  };
 });
 
-console.log(nombres);
+console.log(preciosConIVA);
